@@ -5,11 +5,11 @@
 
 ## Overview
 
-NovelTax is a comprehensive framework for detecting and classifying novelty mentions in biomedical literature using advanced natural language processing techniques. The system leverages OpenAI's GPT models to analyze PubMed abstracts and classify sentences based on their novelty characteristics.
+How can we better identify and understand what makes biomedical research truly novel? Scientific novelty is essential for progress, yet it is often hard to define and measure. In this study, we created NovelTax, a hierarchical taxonomy for classifying different types of author-claimed novelty in biomedical research papers. Developed through an iterative, expert-guided, and LLM-assisted framework using a domain-stratified corpus of 12,701 PubMed conclusion sentences, NovelTax offers a fine-grained, interpretable schema of innovation types, validated for clarity, consistency, and coverage. We found that about 6.47% of conclusion sentences included an explicit novelty claim, with new findings being the most common. We also identified three major innovation patterns across 130 biomedical fields. NovelTax helps researchers, reviewers, and funders understand where innovation is happening and where it may be missing. It offers a new way to make scientific novelty more visible, measurable, and useful.
 
 ## Features
 
-- **Automated Novelty Detection**: Identifies novelty mentions in biomedical abstracts using keyword-based detection
+- **Automated Novelty Detection**: Identifies novelty mentions in biomedical conclusions using keyword-based detection
 - **AI-Powered Classification**: Utilizes OpenAI GPT models for sophisticated novelty classification
 - **Batch Processing**: Efficient batch processing capabilities for large-scale analysis
 - **Flexible Taxonomy**: Customizable taxonomy system for novelty classification
@@ -88,15 +88,15 @@ pmid    conclusions
 
 ```
 NovelTax/
-├── README.md                 # This file
-├── LICENSE                   # Apache 2.0 License
-├── req.txt                   # Python dependencies
-├── dotenv.tpl               # Environment template
-├── .gitignore               # Git ignore rules
-├── functions.py             # Utility functions
-├── annotation_preparation.py # Novelty detection pipeline
-├── nb_openai_batch.py       # OpenAI batch processing
-└── novelty_reviewer/        # Configuration directory (to be released upon publication)
+├── README.md                    # This file
+├── LICENSE                      # Apache 2.0 License
+├── req.txt                      # Python dependencies
+├── dotenv.tpl                   # Environment template
+├── .gitignore                   # Git ignore rules
+├── functions.py                 # Utility functions
+├── annotation_preparation.py    # Novelty detection pipeline
+├── nb_openai_batch.py           # OpenAI batch processing
+└── novelty_reviewer/            # Configuration directory (to be released upon publication)
 ```
 
 ## API Reference
@@ -117,10 +117,6 @@ Converts TSV input to JSONL format for OpenAI batch processing.
 
 #### `upload_jsonl(jsonl_fp, headers)`
 Uploads JSONL file to OpenAI for batch processing.
-
-## Contributing
-
-We welcome contributions! Please see our contributing guidelines for details.
 
 ## Citation
 
@@ -145,10 +141,10 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 - PubMed for biomedical literature access
 - The research community for feedback and contributions
 
-## Contact
+## Contributing and Contact
 
-For questions and support, please open an issue on GitHub or contact the maintainers.
+We welcome contributions, questions and support, please open an issue on GitHub or contact the maintainers.
 
 ---
 
-**Note**: The full dataset and complete codebase, including the web-based annotation platform, will be released publicly upon publication. 
+**Note**: The full dataset and complete codebase will be released publicly upon publication. 
