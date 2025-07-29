@@ -1,0 +1,4 @@
+subprocess
+concurrent.futures
+pubmed_parser
+python-dotenv
