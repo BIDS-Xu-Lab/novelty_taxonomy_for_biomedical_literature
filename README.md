@@ -123,11 +123,11 @@ Uploads JSONL file to OpenAI for batch processing.
 If you use NovelTax in your research, please cite our paper:
 
 ```bibtex
-@article{noveltax2024,
-  title={How Researchers Claim Novelty in Biomedical Science: A Taxonomy for Understanding Innovation},
-  author={TBD},
-  journal={TBD},
-  year={2024}
+@article{peng2025noveltax,
+  title     = {How Researchers Claim Novelty in Biomedical Science: A Taxonomy for Understanding Innovation},
+  author    = {Peng, Xueqing and ...},
+  journal   = {To appear},
+  year      = {2025}
 }
 ```
 
