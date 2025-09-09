@@ -5,7 +5,7 @@
 
 ## Overview
 
-How can we better identify and understand what makes biomedical research truly novel? Scientific novelty is essential for progress, yet it is often hard to define and measure. In this study, we created NovelTax, a hierarchical taxonomy for classifying different types of author-claimed novelty in biomedical research papers. Developed through an iterative, expert-guided, and LLM-assisted framework using a domain-stratified corpus of 12,701 PubMed conclusion sentences, NovelTax offers a fine-grained, interpretable schema of innovation types, validated for clarity, consistency, and coverage. We found that about 6.47% of conclusion sentences included an explicit novelty claim, with new findings being the most common. We also identified three major innovation patterns across 130 biomedical fields. NovelTax helps researchers, reviewers, and funders understand where innovation is happening and where it may be missing. It offers a new way to make scientific novelty more visible, measurable, and useful.
+Scientific novelty is essential for progress, yet it is often hard to define and measure. In this study, we created a hierarchical taxonomy for classifying different types of author-claimed novelty in biomedical research papers, *NOBL (Novelty Ontology for Biomedical Literature)*. Developed through an iterative, data-driven, expert-guided, and AI-assisted framework using a domain-stratified corpus of 12,701 PubMed articles, *NOBL* offers a fine-grained, interpretable schema of innovation types, validated for clarity, consistency, and coverage. We found that about 6.47% of articles included at least one explicit novelty claim, with new findings being the most common. We also identified three major innovation patterns across 130 biomedical fields. *NOBL* provides a systematic approach for researchers, reviewers, and funders to understand the innovation landscape of biomedical research and offers a new way to make scientific novelty more visible, measurable, and useful.
 
 ## Features
 
@@ -30,7 +30,7 @@ https://clinicalnlp.org/novelty-reviewer/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/NovelTax.git
+git clone https://github.com/BIDS-Xu-Lab/novelty_taxonomy_for_biomedical_literature.git
 cd NovelTax
 ```
 
@@ -123,7 +123,7 @@ Uploads JSONL file to OpenAI for batch processing.
 If you use NovelTax in your research, please cite our paper:
 
 ```bibtex
-@article{peng2025noveltax,
+@article{peng2025nobl,
   title     = {How Researchers Claim Novelty in Biomedical Science: A Taxonomy for Understanding Innovation},
   author    = {Peng, Xueqing and ...},
   journal   = {To appear},
