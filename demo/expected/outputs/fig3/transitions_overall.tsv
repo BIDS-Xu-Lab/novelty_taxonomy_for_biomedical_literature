@@ -1,0 +1,10 @@
+from_regime	to_regime	count
+Concept	Concept	40
+Concept	Method	0
+Concept	Finding	0
+Method	Concept	0
+Method	Method	48
+Method	Finding	0
+Finding	Concept	2
+Finding	Method	6
+Finding	Finding	56

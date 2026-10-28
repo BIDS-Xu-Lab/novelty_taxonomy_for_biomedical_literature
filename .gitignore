@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# NOBL: local data, results and demo runs
+/data/
+/outputs/
+/demo/work/

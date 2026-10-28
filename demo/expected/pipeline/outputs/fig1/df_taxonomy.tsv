@@ -1,0 +1,32 @@
+leaf	third	second	top	total	percentage
+New Attempt	NA	New Attempt	Concept Novelty	1	3.225806451612903
+New Perspective	NA	New Perspective	Concept Novelty	1	3.225806451612903
+New Theory	NA	New Theory	Concept Novelty	1	3.225806451612903
+New Experimental Method	New Experimental Method	New Research Method	Method And/Or Material Novelty	1	3.225806451612903
+New Data Analysis Method	New Data Analysis Method	New Research Method	Method And/Or Material Novelty	1	3.225806451612903
+Other New Research Method	Other New Research Method	New Research Method	Method And/Or Material Novelty	1	3.225806451612903
+New Therapy	New Therapy	New Application Method	Method And/Or Material Novelty	1	3.225806451612903
+New Indicator/Index/Predictor	New Indicator/Index/Predictor	New Application Method	Method And/Or Material Novelty	1	3.225806451612903
+New Tool/Device	New Tool/Device	New Application Method	Method And/Or Material Novelty	1	3.225806451612903
+Method Reapplication/Method Combination	Method Reapplication/Method Combination	New Application Method	Method And/Or Material Novelty	1	3.225806451612903
+Other New Application Method	Other New Application Method	New Application Method	Method And/Or Material Novelty	1	3.225806451612903
+New Dataset/Material	NA	New Dataset/Material	Method And/Or Material Novelty	1	3.225806451612903
+New Substance	New Substance	New Object	Finding Novelty	1	3.225806451612903
+New Sequence	New Sequence	New Object	Finding Novelty	1	3.225806451612903
+New Gene	New Gene	New Object	Finding Novelty	1	3.225806451612903
+New Protein	New Protein	New Object	Finding Novelty	1	3.225806451612903
+New Genus And Species	New Genus And Species	New Object	Finding Novelty	1	3.225806451612903
+New Case	New Case	New Object	Finding Novelty	1	3.225806451612903
+Other New Object	Other New Object	New Object	Finding Novelty	1	3.225806451612903
+New Cell Property	New Cell Property	New Property/Feature	Finding Novelty	1	3.225806451612903
+New Candidate Gene	New Candidate Gene	New Property/Feature	Finding Novelty	1	3.225806451612903
+New Marker	New Marker	New Property/Feature	Finding Novelty	1	3.225806451612903
+New Risk Variant	New Risk Variant	New Property/Feature	Finding Novelty	1	3.225806451612903
+New Biomedical Function	New Biomedical Function	New Property/Feature	Finding Novelty	1	3.225806451612903
+New Target	New Target	New Property/Feature	Finding Novelty	1	3.225806451612903
+Other New Property/Feature	Other New Property/Feature	New Property/Feature	Finding Novelty	1	3.225806451612903
+New Pathway	New Pathway	New Interaction	Finding Novelty	1	3.225806451612903
+New Mechanism	New Mechanism	New Interaction	Finding Novelty	1	3.225806451612903
+New Association	New Association	New Interaction	Finding Novelty	1	3.225806451612903
+Other New Interaction	Other New Interaction	New Interaction	Finding Novelty	1	3.225806451612903
+Other New Finding	NA	Other New Finding	Finding Novelty	1	3.225806451612903

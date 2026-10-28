@@ -1,0 +1,32 @@
+leaf	third	second	top	total	percentage
+New Attempt	NA	New Attempt	Concept Novelty	3891	6.165327755858725
+New Perspective	NA	New Perspective	Concept Novelty	6081	9.635404287683604
+New Theory	NA	New Theory	Concept Novelty	4480	7.098604046838111
+New Experimental Method	New Experimental Method	New Research Method	Method And/Or Material Novelty	1395	2.2103912154774923
+New Data Analysis Method	New Data Analysis Method	New Research Method	Method And/Or Material Novelty	4557	7.22061130389314
+Other New Research Method	Other New Research Method	New Research Method	Method And/Or Material Novelty	1682	2.6651455372280584
+New Therapy	New Therapy	New Application Method	Method And/Or Material Novelty	3622	5.739094611082061
+New Indicator/Index/Predictor	New Indicator/Index/Predictor	New Application Method	Method And/Or Material Novelty	2612	4.13873968087972
+New Tool/Device	New Tool/Device	New Application Method	Method And/Or Material Novelty	2807	4.447719098097004
+Method Reapplication/Method Combination	Method Reapplication/Method Combination	New Application Method	Method And/Or Material Novelty	2086	3.3052875093089953
+Other New Application Method	Other New Application Method	New Application Method	Method And/Or Material Novelty	3711	5.880115986119694
+New Dataset/Material	NA	New Dataset/Material	Method And/Or Material Novelty	1909	3.0248292690656147
+New Substance	New Substance	New Object	Finding Novelty	1450	2.297539256231085
+New Sequence	New Sequence	New Object	Finding Novelty	237	0.3755288301563911
+New Gene	New Gene	New Object	Finding Novelty	576	0.9126776631649001
+New Protein	New Protein	New Object	Finding Novelty	1008	1.597185910538575
+New Genus And Species	New Genus And Species	New Object	Finding Novelty	968	1.5338055172632346
+New Case	New Case	New Object	Finding Novelty	346	0.5482404018316933
+Other New Object	Other New Object	New Object	Finding Novelty	1659	2.628701811094738
+New Cell Property	New Cell Property	New Property/Feature	Finding Novelty	2135	3.3829284910712873
+New Candidate Gene	New Candidate Gene	New Property/Feature	Finding Novelty	2436	3.859865950468223
+New Marker	New Marker	New Property/Feature	Finding Novelty	1476	2.338736511860056
+New Risk Variant	New Risk Variant	New Property/Feature	Finding Novelty	788	1.2485937475242035
+New Biomedical Function	New Biomedical Function	New Property/Feature	Finding Novelty	445	0.7051068751881605
+New Target	New Target	New Property/Feature	Finding Novelty	2200	3.4859216301437153
+Other New Property/Feature	Other New Property/Feature	New Property/Feature	Finding Novelty	673	1.0663751168576001
+New Pathway	New Pathway	New Interaction	Finding Novelty	1217	1.9283484654022278
+New Mechanism	New Mechanism	New Interaction	Finding Novelty	2095	3.319548097795947
+New Association	New Association	New Interaction	Finding Novelty	854	1.3531713964285148
+Other New Interaction	Other New Interaction	New Interaction	Finding Novelty	1811	2.8695473055410305
+Other New Finding	NA	Other New Finding	Finding Novelty	1904	3.016906719906197

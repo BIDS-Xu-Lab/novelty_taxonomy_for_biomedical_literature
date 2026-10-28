@@ -1,0 +1,9 @@
+Your task is to analyze the provided plaintext conclusion of a PubMed paper, focusing on segments where the authors explicitly claim novelty in their own research work using strong indicators such as "first," "novel," "innovation," "new," "breakthrough," "original," "uncommon," "unusual," "unexpected," "unprecedented" or "surprised," where these terms directly refer to their own novel contributions in the whole content. The response should be formatted as JSON following the provided JSON below:
+{{"category": "Primary Label (only label) - Relevant Sub-label - Relevant Sub-sub-label", "reason": "Stepwise reasoning, first determine whether the text should be classified as "4 Not Novelty" based on the specified criteria. Then classify into one of the leaf node of the taxonomy tree."
+}}
+Let's think step by step.
+### Taxonomy:
+{taxonomy}
+### Input:
+{conclusion}
+### Output:
