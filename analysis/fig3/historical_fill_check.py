@@ -47,7 +47,7 @@ def main():
     df["pmid"] = df["pmid"].astype(str)
     df["output"] = df["output"].str.lower().str.strip()
 
-    # top-level category of each novelty claim; 'not novelty' and off-taxonomy outputs are dropped
+    # top-level category of each novelty claim; 'not novelty' is dropped
     df["top"] = df["output"].map(get_leaf_to_top(read_hierarchy(paths.TAXONOMY)))
     df["decade"] = df["year"].apply(year_to_decade)
     lab = df.dropna(subset=["top", "decade"])

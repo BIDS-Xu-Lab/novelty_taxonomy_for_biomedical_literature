@@ -81,17 +81,16 @@ def get_leaf_to_top(taxonomy):
 
 @timing_decorator
 def load_labels(taxonomy_fp, labels_fp, logger=None):
-    """Load model labels; outputs that are not a leaf of the taxonomy are set to 'not novelty'."""
-    leaf_node_names = get_leaf_node_names(read_hierarchy(taxonomy_fp))
-    print_or_log(logger, f"* found {len(leaf_node_names)} leaf nodes in {taxonomy_fp}!")  # 31 + 'not novelty'
+    """Load model labels (one per article; every label is a leaf of the taxonomy, see pipeline step 05)."""
+    leaf_node_names = get_leaf_node_names(read_hierarchy(taxonomy_fp))  # 31 + 'not novelty'
 
     df = pd.read_csv(labels_fp, sep="\t", dtype={'pmc': str, 'pmid': str})
     df["output"] = df["output"].str.lower().str.strip()
     print_or_log(logger, f"* loaded {len(df)} rows from {labels_fp}!")
 
     off_taxonomy = ~df["output"].isin(leaf_node_names)
-    print_or_log(logger, f"* found {off_taxonomy.sum()} rows not in taxonomy; assigned to 'not novelty'")
-    df.loc[off_taxonomy, "output"] = "not novelty"
+    if off_taxonomy.any():
+        raise ValueError(f"{off_taxonomy.sum()} labels are not leaves of {taxonomy_fp}; rerun pipeline step 05")
     return df
 
 

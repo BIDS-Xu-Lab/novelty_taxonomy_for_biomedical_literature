@@ -1,7 +1,6 @@
 """Distribution of novelty claims across the NOBL hierarchy (Fig. 1b).
 
-Shares use all mapped novelty claims as the denominator ('not novelty' and off-taxonomy
-outputs are excluded).
+Shares use all novelty claims as the denominator ('not novelty' is excluded).
 
 Inputs : derived/labels.tsv
 Outputs: outputs/fig1/df_taxonomy.tsv (count and share of every leaf), top_level_shares.tsv,

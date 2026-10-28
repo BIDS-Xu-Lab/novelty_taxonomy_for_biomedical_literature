@@ -30,9 +30,13 @@ Version for peer review: `v1.0-review`.
 - **Dependencies** (pinned in `environment.yml`, all tested at these versions): NumPy 1.26.4,
   pandas 2.2.2, SciPy 1.13.1, scikit-learn 1.6.1, matplotlib 3.9.1, PyArrow 17.0.0,
   openai 1.52.1 (with httpx 0.27.2), python-dotenv 1.0.1, DuckDB 1.5.2.
-- **Hardware:** no special hardware. The demo needs less than 2 GB of RAM. On the full
-  corpus, every analysis script ran in under 2 GB of RAM; step 01 loads all 36.5 million
-  PubMed records into memory and was run on a workstation with 256 GB of RAM.
+- **Hardware:** no GPU is needed. Memory depends on what is run:
+  - Demo: any desktop or laptop (peak memory 0.6 GB measured).
+  - Analyses on the full corpus, starting from the derived tables (`analysis/`): a desktop
+    with at least 8 GB of RAM. Peak memory was 4.5 GB for `analysis/fig4/01_citation_delta.py`
+    and below 1.5 GB for every other script.
+  - Building the corpus from all 36.5 million PubMed records (pipeline step 01, which holds
+    them in memory): a high-memory workstation. The authors used one with 256 GB of RAM.
 - **Non-standard resources:** classifying the full corpus (pipeline steps 03–04) requires a
   paid OpenAI or Azure OpenAI account with access to GPT-4o and the Batch API. The authors'
   estimate for the 2.37 million conclusion sections was about US$3,700 at the Batch API
@@ -58,11 +62,11 @@ bash demo/run_demo.sh
 
 The demo runs the complete code path on data that contain no real articles:
 
-- **Part A — classification pipeline.** Thirty-eight fictional conclusion sections
+- **Part A — classification pipeline.** Thirty-seven fictional conclusion sections
   (`demo/examples/raw/`, written by `demo/examples/build_examples.py`) go through keyword
-  filtering (step 01) and request building (step 02). Thirty-four contain a novelty keyword;
-  together they cover each of the 31 NOBL types at least once, plus two "not novelty" answers
-  and one response that is not valid JSON. Cached Batch API responses
+  filtering (step 01) and request building (step 02). Thirty-three contain a novelty keyword;
+  together they cover each of the 31 NOBL types at least once, plus two "not novelty" answers.
+  Cached Batch API responses
   (`demo/examples/cached_responses/`) replace the API call, steps 04–05 parse them into labels,
   and the Fig. 1 script summarises the labels across the hierarchy. The cached responses were
   written by the authors to show the response format; they are not GPT-4o outputs. To classify
@@ -73,7 +77,7 @@ The demo runs the complete code path on data that contain no real articles:
 
 **Expected output.** The script ends with `All demo outputs match the expected results.`
 It compares nine result tables with the copies in `demo/expected/`: for example, the
-34 labels of Part A and their distribution over the 31 types, the leaf distribution (Fig. 1), the yearly top-level shares (Fig. 2a),
+33 labels of Part A and their distribution over the 31 types, the leaf distribution (Fig. 1), the yearly top-level shares (Fig. 2a),
 the subfield profile classes and Table S1, and the decade transitions (Fig. 3). All figures are written to
 `demo/work/outputs/fig1` … `fig4`. Because the data are simulated, these numbers are not the
 paper's results.
@@ -95,9 +99,6 @@ to `$NOBL_OUTPUT_DIR` (default `./outputs`). File names are defined in `nobl/pat
 | `journal_bst.tsv` | `JournalTitle`, `BroadSubjectTerms` (`;`-separated) | NLM Catalog Broad Subject Terms |
 | `icite/icite_metadata.csv`, `icite/open_citation_collection.csv` | iCite snapshot files | NIH iCite Database Snapshots |
 
-PubMed XML parsing and conclusion extraction happen upstream of this repository; the tables
-above are their outputs.
-
 ### Pipeline
 
 ```bash
@@ -110,9 +111,11 @@ python pipeline/05_merge_labels.py        # derived/labels.tsv, derived/labels_w
 python pipeline/06_build_citations.py     # derived/citations.parquet from an iCite snapshot
 ```
 
-`04_download_batches.py` keeps the raw responses. A response whose label is not a leaf of
-the taxonomy (for example, text that is not valid JSON) is counted as "not novelty" by the
-analyses.
+`04_download_batches.py` keeps the raw responses. `05_merge_labels.py` checks that every
+article has exactly one label and that every label is a leaf of the taxonomy. If not, it
+stops and lists the articles in `derived/batches/to_resubmit.tsv` (for example, those from a
+batch that did not complete, or with a response that is not valid JSON). These articles must
+be classified again before the analyses are run.
 
 ### Analyses
 
@@ -143,12 +146,11 @@ were not produced by code in this repository.
 
 1. Download the PubMed baseline (the paper used the files available on 8 January 2024) and
    build the input tables described above.
-2. Run pipeline steps 01–05. The paper's run classified 2,375,414 conclusion sections
-   between April and October 2025 with `temperature = 0` and the files in `resources/`.
-   The model versions reported in the API responses were `gpt-4o-2024-11-20` for 2,155,412
-   requests (90.7%) and `gpt-4o-2024-08-06` for 20,000 (0.8%); 200,000 (8.4%) responses
-   report only `gpt-4o`. LLM outputs are not guaranteed to be identical across runs or model
-   versions, so a new run can differ slightly from the paper's labels.
+2. Run pipeline steps 01–05. The paper's run classified 2,375,414 conclusion sections with
+   GPT-4o (`gpt-4o-2024-11-20`) through the Batch API, with `temperature = 0`. Each API
+   response records the model version that served it. LLM outputs are not guaranteed to be
+   identical across runs or model versions, so a new run can differ slightly from the paper's
+   labels.
 3. Download iCite Database Snapshot 2026-03 (collection version 75,
    doi:10.35092/yhjcc.4586573.v75) and run step 06.
 4. Run the analyses in the order above.

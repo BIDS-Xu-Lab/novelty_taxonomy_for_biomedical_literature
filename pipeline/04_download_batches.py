@@ -46,7 +46,7 @@ def main():
         for name, batch_id in zip(table.input_jsonl_fp, table.batch_id):
             batch = client.batches.retrieve(batch_id)
             if batch.status != "completed":
-                print_or_log(logger, f"* {batch_id} is {batch.status}; skipped")
+                print_or_log(logger, f"* {batch_id} is {batch.status}; skipped (step 05 lists its articles)")
                 continue
             (out_jsonl_dir / Path(name).name).write_text(client.files.content(batch.output_file_id).text)
             print_or_log(logger, f"* downloaded {batch_id}")

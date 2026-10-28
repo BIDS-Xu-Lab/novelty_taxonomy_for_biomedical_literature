@@ -1,8 +1,8 @@
 """Write the fictional example inputs and illustrative Batch API responses used by Part A of the demo.
 
 Every sentence, title, journal, compound, gene and organism below is invented. The examples
-cover each of the 31 NOBL leaf types at least once, plus "not novelty" answers, one response
-that is not valid JSON, and conclusions without any novelty keyword (removed by step 01).
+cover each of the 31 NOBL leaf types at least once, plus "not novelty" answers and
+conclusions without any novelty keyword (removed by step 01).
 The responses were written by the authors to illustrate the response format; they are
 not GPT-4o outputs.
 
@@ -88,8 +88,6 @@ EXAMPLES = [
      "New guidelines were introduced in 2015, but adherence in our cohort remained below 40% and did not change over the study period."),
     ("not novelty", "Oncology", 2007, "u", "Long-term follow-up of a screening programme",
      "Consistent with the original trial, screening reduced mortality over 20 years of follow-up."),
-    ("invalid", "Cardiology", 2020, "s", "A first-line protocol for heart failure readmissions",
-     "Our first-line protocol reduced 30-day readmissions by one third compared with usual care."),
     (None, "General Surgery", 2014, "s", "Outcomes of laparoscopic versus open repair",
      "Laparoscopic repair was associated with shorter hospital stay; complication rates were similar between groups."),
     (None, "Pediatrics; Epidemiology", 2005, "u", "Seasonal patterns in paediatric asthma admissions",
@@ -142,11 +140,7 @@ def main():
         assert has_keyword(conclusion) == (label is not None), f"keyword check failed for {pmid}: {conclusion}"
         if label is None:
             continue
-        if label == "invalid":
-            content = "The conclusion describes a new therapy."
-        else:
-            content = json.dumps({"category": paths_by_leaf[label], "reason": REASON})
-        responses.append((pmid, content))
+        responses.append((pmid, json.dumps({"category": paths_by_leaf[label], "reason": REASON})))
 
     def write(name, rows, fields):
         with open(raw / name, "w", newline="", encoding="utf-8") as f:

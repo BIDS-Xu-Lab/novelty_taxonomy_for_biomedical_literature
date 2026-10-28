@@ -24,7 +24,6 @@ SEED = 42
 YEARS = np.arange(1975, 2025)
 N_PER_YEAR = np.linspace(600, 3000, len(YEARS)).astype(int)   # 90,000 articles
 P_NOT_NOVELTY = 0.30
-P_OFF_TAXONOMY = 0.001
 
 # subfield -> (group, drift target or None); the drifting subfields are the ones the
 # trajectory figure highlights
@@ -82,9 +81,7 @@ def main():
             group, drift = SUBFIELDS[main_bst]
 
             u = rng.random()
-            if u < P_OFF_TAXONOMY:
-                output, top = "none json", None
-            elif u < P_NOT_NOVELTY:
+            if u < P_NOT_NOVELTY:
                 output, top = "not novelty", None
             else:
                 top = TOPS[rng.choice(3, p=top_probs(group, drift, year))]

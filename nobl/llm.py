@@ -14,7 +14,7 @@ import re
 
 SYSTEM_MESSAGE = ("You are an expert specializing in biomedical research analysis tasked with classifying "
                   "sentences from PubMed abstracts based on their novelty.")
-MODEL = "gpt-4o"  # the paper used gpt-4o-2024-11-20 for 90.7% of requests; see README
+MODEL = "gpt-4o"
 AZURE_API_VERSION = "2024-12-01-preview"
 
 
