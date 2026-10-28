@@ -7,8 +7,6 @@ types). This repository contains the code that builds the Biomedical Novelty Cla
 from PubMed, classifies each conclusion section with GPT-4o using the frozen NOBL taxonomy
 and prompt, and produces the analyses behind Figs. 1–4, Figs. S1–S6 and Table S1.
 
-Version for peer review: `v1.0-review`.
-
 ## Contents
 
 | Path | What it contains |
